@@ -1,0 +1,20 @@
+{
+  "name": "bower.json",
+  "description": "",
+  "main": "",
+  "authors": [
+    "rodrigld <rodrigld@mail.uc.edu>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "tabulator": "^5.4.4"
+  }
+}

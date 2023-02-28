@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <script src="js/d3.v6.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script>
+
+        let cols = []
+        d3.csv('data/exoplanets-1.csv')
+        .then(data => {
+            data.forEach(d=>{
+                 cols = [
+                {head:"Name", html: function(row){return d.pl_name} },
+                {head:"Discovery Method", html: function(row){return d.discoverymethod}},
+                {head: "Year Discovered", html: function(row){return d.disc_year;}}];
+            })
+            var table = d3.select("#datatable").append("table"), thead = table.append("thead"),
+            tbody = table.append("tbody");
+    
+    thead.append("tr").
+    selectAll("th")
+    .data(cols)
+    .enter().append("th").text(function(col){return col;});
+    
+    var rows = tbody.selectAll("tr")
+    .data(data)
+    .enter()
+    .append("tr");
+    
+    var cells = rows.selectAll("td")
+    .data(function(row){
+    return cols.map(function(col){
+    return {col: col, value: row[col]}
+    });
+    })
+
+    .enter()
+    .append("td").text(function(d){return d.value;});
+
+            
+
+        });
+       
+
+    </script>
+<div class = "datatable">
+    
+</div>
+
+
+    
+ 
+</body>
+</html>

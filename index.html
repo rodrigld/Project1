@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title >{Project1: Out of this World}</title>
+    <link rel="icon" href="data:;base64,iVBORwOKGO=" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Project1: Out of this World: Laura Rodriguez</h1>
+    <h5>This data comes from the Kelper Space Telescope. </h5>
+    <h5>Libraries used: d3, Tabulator</h5>
+    <nav>
+        <a href="sample.html">Click here to view data.</a> |
+       
+        </nav>
+    <div class = "grid-container">
+
+        <div class="container" >
+                <h1>Frequency of exoplanets beloning to systems with 1-4 stars.</h1>
+                <svg id="chart" style="display: block;"></svg>
+        
+                <div id="footer">
+                    <div class="footer-col">
+                        <button type="button" class="btn btn-link btn-sm" id="sortStars">
+                            <img src="images/sort-down.svg" alt="" width="14" height="14" title="Sort"> Reverse order
+                        </button>
+                    </div>
+                </div>
+        </div>
+
+  
+        <div class="container" >
+            <h1
+>Frequency of exoplanets beloning to systems with 1-8 planets.</h1
+>
+            
+            <svg id="planetchart"></svg>  
+    
+            <div id="footer">
+                <div class="footer-col">
+                    <button type="button" class="btn btn-link btn-sm" id="sortPlanets">
+                        <img src="images/sort-down.svg" alt="" width="14" height="14" title="Sort"> Reverse order
+                    </button>
+                </div>
+                
+            </div>
+    
+        </div>
+
+        <div class="container" >
+            <h1>Frequency of exoplanets orbiting different star types.</h1>
+            
+            <svg id="startypechart"></svg>  
+    
+            <div id="footer">
+                <div class="footer-col">
+                    <button type="button" class="btn btn-link btn-sm" id="sortStarTypes">
+                        <img src="images/sort-down.svg" alt="" width="14" height="14" title="Sort"> Reverse order
+                    </button>
+                    
+                    
+                    <a target="_blank" class="btn btn-link btn-sm" href="https://universe.nasa.gov/stars/types/">Learn more about star types!</a>  
+                
+    
+    
+                </div>
+                
+            </div>
+    
+        </div>
+
+
+
+        <div class="container" >
+            <h1>Frequency of exoplanets discovered by different methods.</h1>
+            
+            <svg id="discoverychart"></svg>  
+    
+            <div id="footer">
+                <div class="footer-col">
+                    <button type="button" class="btn btn-link btn-sm" id="sortDiscovery">
+                        <img src="images/sort-down.svg" alt="" width="14" height="14" title="Sort"> Reverse order
+                    </button>
+                    
+                    <a target="_blank" class="btn btn-link btn-sm" href="https://universe.nasa.gov/stars/types/">Learn more about star types!</a>  
+                
+    
+    
+                </div>
+                
+            </div>
+    
+        </div>
+
+        <div class="container" >
+            <h1>Number of exoplanets that are habitable or unhabitable, by star type they orbit.</h1>
+            
+            <svg id="habitablechart"></svg>  
+    
+            <ul class="legend">
+                <li class="legend-btn" data-difficulty="Habitable"><span class="legend-symbol"></span> Habitable</li>
+                <li class="legend-btn" data-difficulty="Unhabitable"><span class="legend-symbol"></span> Unhabitable</li>
+            </ul>
+    
+            <div id="footer">
+                <div class="footer-col">
+                    <button type="button" class="btn btn-link btn-sm" id="sortHabitable">
+                        <img src="images/sort-down.svg" alt="" width="14" height="14" title="Sort"> Reverse order
+                    </button>
+                
+    
+                </div>
+                
+            </div>
+    
+        </div>
+
+        <div class="container" >
+            <h1>Distribution of exoplanets by their distance to earth. </h1>
+            
+            <svg id="distancechart"></svg>  
+    
+         
+    
+            
+    
+        </div>
+
+        <div class="container" >
+            <h1>Exoplanet Discoveries over Time  </h1>
+            
+            <svg id="scatterplot"></svg>  
+    
+         
+    
+            <div id="footer">
+                <div class="footer-col">
+                    <button type="button" class="btn btn-link btn-sm" id="sortHabitable">
+                        <img src="images/sort-down.svg" alt="" width="14" height="14" title="Sort"> Reverse order
+                    </button>
+                
+    
+                </div>
+                
+            </div>
+    
+        </div>
+
+        
+
+        <div class="container" >
+            <h1>Exoplanet Discoveries over Time  </h1>
+            
+            <svg id="linechart"></svg>  
+    
+    
+            <div id="footer">
+                <div class="footer-col">
+                    <button type="button" class="btn btn-link btn-sm" id="sortHabitable">
+                        <img src="images/sort-down.svg" alt="" width="14" height="14" title="Sort"> Reverse order
+                    </button>
+                
+    
+                </div>
+                
+            </div>
+    
+        </div>
+
+
+
+    </div>
+
+    <div id="table"></div>
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+    
+    <div id="tooltip"></div>
+    <div id="tooltipscatter"></div>
+
+    <link href="/node_modules/tabulator-tables/dist/css/tabulator.css" rel = "stylesheet">
+    <script type = "text/javascript" src="/node_modules/tabulator-tables/dist/js/tabulator.js"></script>
+
+    <script src="js/d3.v6.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/barchart.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/dual_barchart.js"></script>
+    <script src="js/histogram.js"></script>
+    <script src="js/scatterplot.js"></script>
+    <script src="js/linechart.js"></script>
+    <script src="js/table.js"></script>
+
+
+</body>
+</html>
